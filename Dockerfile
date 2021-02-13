@@ -10,4 +10,3 @@ RUN pip3 install youtube_dl
 RUN npm install -g forever
 
 WORKDIR /usr/src/app
-RUN npm install
