@@ -3,7 +3,8 @@
 cd app
 npm install
 
-cd app/web/vue-app
+npm install -g @vue/cli
+cd web/vue-app
 npm run build
 
 cd ../../../
