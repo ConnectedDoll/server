@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd app
-npm install
-
 # GCP Cloud Storage マウント
 export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
 echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
@@ -15,12 +12,14 @@ sudo groupadd fuse
 sudo usermod -a -G fuse $USER
 
 # マウント
-cd ../
 mkdir downloads
 gcsfuse connected-doll-server-downloads downloads
 # fusermount -u downloads
 
-cd ../../
+cd app
+npm install
+
+cd ../
 docker-compose down
 docker-compose build
 docker-compose up -d
