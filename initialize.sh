@@ -22,12 +22,14 @@ cd app
 npm install
 
 cd ..
+
+# downloads マウント
+mkdir downloads
+gcsfuse connected-doll-server-downloads downloads
+
 docker-compose down
 docker-compose build
 docker-compose up -d
 
-# マウント
-# cd ..
-# mkdir downloads
-gcsfuse connected-doll-server-downloads downloads
+# gcsfuse connected-doll-server-downloads downloads
 # fusermount -u downloads
