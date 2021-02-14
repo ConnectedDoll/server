@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.cbd90d7e063c8cc477779966f0071c35.js"
+  "/precache-manifest.13896ec69b21c0b3e00978b90fa28b35.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "vue-app"});
+workbox.core.setCacheNameDetails({prefix: "TubeToMp3"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
