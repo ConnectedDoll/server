@@ -13,9 +13,9 @@ sudo usermod -a -G fuse $USER
 
 # 環境変数
 cat <<EOT > .env
-LOCALUID=`id -u`
-LOCALGID=`id -g`
-LOCALUNAME=$USER
+UID=`id -u`
+GID=`id -g`
+UNAME=$USER
 EOT
 
 cd app
