@@ -24,8 +24,8 @@ npm install
 cd ..
 
 # downloads マウント
-mkdir downloads
-gcsfuse connected-doll-server-downloads downloads
+sudo mkdir downloads
+sudo gcsfuse connected-doll-server-downloads downloads
 
 docker-compose down
 docker-compose build
