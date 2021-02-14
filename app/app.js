@@ -40,14 +40,14 @@ app.get('/api/dl/:videoid', function (req, res, next) {
   const fileMP3 = DOWNLOADS_DIR + '/' + videoid + '.mp3';
 
   // 音声をダウンロード
-  if(fs.existsSync( fileM4A ) == false) {  
-    const cmdDownloadM4A = 'youtube-dl "https://www.youtube.com/watch?v='+ videoid
-                    +'" -f 140'
-                    +' -o "' + fileM4A + '"';
+  if ((fs.existsSync( fileMP3 ) == false) && (fs.existsSync( fileM4A ) == false)) { 
+      const cmdDownloadM4A = 'youtube-dl "https://www.youtube.com/watch?v='+ videoid
+                      +'" -f 140'
+                      +' -o "' + fileM4A + '"';
 
-    console.log('command', cmdDownloadM4A);
-    const stdout = execSync(cmdDownloadM4A);
-    console.log(`stdout: ${stdout.toString()}`);
+      console.log('command', cmdDownloadM4A);
+      const stdout = execSync(cmdDownloadM4A);
+      console.log(`stdout: ${stdout.toString()}`);
   }
 
   // MP3 へ変換
