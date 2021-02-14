@@ -19,6 +19,15 @@ sudo apt update
 sudo apt install -y docker docker-compose
 ```
 
+## Cloud Storage FUSE
+Cloud Storage をダウンロード先としてマウントする
+
+```
+sudo apt-get update
+sudo apt-get install gcsfuse
+
+```
+
 ## ConnectedDoll サーバー ダウンロード
 
 ```
