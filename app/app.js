@@ -73,8 +73,8 @@ app.get('/api/dl/:videoid', function (req, res, next) {
 });
 
 // MP3 ファイルストリーミング
-// http://192.168.99.109/stream/d3_IcaDhcDM
-app.get('/stream/:videoid', (req, res) => {
+// http://192.168.99.109/api/stream/d3_IcaDhcDM
+app.get('/api/stream/:videoid', (req, res) => {
   const videoid = req.params.videoid
   const fileMP3 = DOWNLOADS_DIR + '/' + videoid + '.mp3';
   if(fs.existsSync( fileMP3 ) == false) {
