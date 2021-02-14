@@ -6,7 +6,8 @@ services:
           dockerfile: Dockerfile
           args:
               - UID=${LOCALUID}
-              - GID=${LOCALUID}        
+              - GID=${LOCALGID}
+              - UNAME=${LOCALUNAME}
         container_name: app
         volumes:
             - ./app:/usr/src/app
