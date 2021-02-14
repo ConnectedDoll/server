@@ -11,15 +11,21 @@ sudo apt-get install -y gcsfuse
 sudo groupadd fuse
 sudo usermod -a -G fuse $USER
 
-# マウント
-mkdir downloads
-gcsfuse connected-doll-server-downloads downloads
-# fusermount -u downloads
+# 環境変数
+cat <<EOT > .env
+LOCALUID=`id -u`
+LOCALGID=`id -g`
+EOT
 
 cd app
 npm install
 
-cd ../
 docker-compose down
 docker-compose build
 docker-compose up -d
+
+# マウント
+# cd ..
+# mkdir downloads
+gcsfuse connected-doll-server-downloads downloads
+# fusermount -u downloads
