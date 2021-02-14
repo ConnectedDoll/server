@@ -11,12 +11,12 @@ sudo apt-get install -y gcsfuse
 sudo groupadd fuse
 sudo usermod -a -G fuse $USER
 
-# 環境変数
-cat <<EOT > .env
-UID=`id -u`
-GID=`id -g`
-UNAME=$USER
-EOT
+# # 環境変数
+# cat <<EOT > .env
+# UID=`id -u`
+# GID=`id -g`
+# UNAME=$USER
+# EOT
 
 cd app
 npm install
