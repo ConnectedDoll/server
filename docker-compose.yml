@@ -15,6 +15,3 @@ services:
         restart: always
         tty: true
         command: ./run.sh
-volumes:
-  downloads:
-    external: true
