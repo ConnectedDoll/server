@@ -53,6 +53,7 @@ app.get('/api/dl/:videoid', function (req, res, next) {
   // MP3 へ変換
   if(fs.existsSync( fileMP3 ) == false) { 
     const cmdConvertMP3 = 'ffmpeg -i "' + fileM4A + '"'
+                            + ' -t 60'
                             + ' -ar 44100' 
                             + ' -ab 128k'
                             + ' -acodec libmp3lame' 
