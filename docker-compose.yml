@@ -5,9 +5,10 @@ services:
           context: .
           dockerfile: Dockerfile
           args:
-              - UID=${LOCALUID}
-              - GID=${LOCALGID}
-              - UNAME=${LOCALUNAME}
+              - UID=$LOCALUID
+              - GID=$LOCALGID
+              - UNAME=$LOCALUNAME
+        user: $LOCALUID:$LOCALGID
         container_name: app
         volumes:
             - ./app:/usr/src/app
